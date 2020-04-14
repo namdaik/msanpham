@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Đang chuyển hướng</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" type="text/css" href="../css/chuyen-huong.css">
+    <script type="text/javascript">
+      var urlRedirect = new URL(location.href).searchParams.get("url");
+      var affLink = 'https://fast.accesstrade.com.vn/deep_link/4724097529828107456?url=' + urlRedirect;
+    </script>
+</head>
+<body>
+   <div class="container">
+        <div class="bird-container bird-container--one">
+            <div class="bird bird--one"></div>
+        </div>
+
+        <div class="bird-container bird-container--two">
+            <div class="bird bird--two"></div>
+        </div>
+
+        <div class="bird-container bird-container--three">
+            <div class="bird bird--three"></div>
+        </div>
+
+        <div class="bird-container bird-container--four">
+            <div class="bird bird--four"></div>
+        </div>
+    </div>
+ <div id="redirect-page-content"  style="width: 100%; background:#fff; height: 100%; margin: 50px 0px 30px 0px; text-align: center; font-size: 18px;">
+        <div class="redirect-message">
+                <img src="../images/chuyen-huong.png" alt="" />
+        <p style="font-size: 95%;margin: 8px !important; color: #191919;">Bạn đang chuyển hướng đến:</p>
+        <strong style="margin: 8px !important;" id ="textRedirect"></strong>
+         <p style="font-size: 90%;margin: 8px 0px 15px 0px !important;color: #191919;"><!-- (Tự động chuyển sau <span style="color: red" id="timer"></span> giây) --> </p>
+          <button class="chuyenhuong" style="margin: 0px 10px 0px 0px;background: #009966; border: 1px solid #009966; color: #fff; cursor: pointer; font-family: 'Oswald', arial, serif !important;
+            font-size: 13px ;  font-weight: bold ; padding: 5px 15px;text-decoration: none;text-transform: uppercase;text-shadow: none; height: 45px;
+        "onclick="window.location.href=affLink">✓ CHUYỂN TỚI LUÔN<span style="color: yellow" id="timer"></span></button>
+        <!-- <button class="chuyenhuong" style="background: #033; border: 1px solid #033; color: #fff; cursor: pointer; font-family: 'Oswald', arial, serif !important;
+            font-size: 13px ;  font-weight: bold ; margin-bottom: 10px;padding: 5px 15px;text-decoration: none;text-transform: uppercase;text-shadow: none;
+        " onclick="self.close()">✘ Hủy bỏ</button> <br />  -->
+
+                </div>
+ </div>
+
+<script>
+  document.getElementById('textRedirect').innerText = urlRedirect;
+  var wait_time = 5000;
+  var wait_seconds = 5;
+    if(urlRedirect)
+    {
+      window.setTimeout(function(){
+           window.location.href= affLink;
+      },wait_time);
+    }
+document.getElementById('timer').innerHTML = wait_seconds;
+var timer = wait_seconds;
+var interval = setInterval(function() {
+   var seconds = timer;
+   if (seconds > 0) {
+    --seconds;
+    document.getElementById('timer').innerHTML = seconds + "";
+    timer = seconds;
+   }
+   else {
+   }
+ }, 1000);
+</script>
